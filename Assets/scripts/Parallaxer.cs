@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Parallaxer : MonoBehaviour {
 
 	class PoolObject {
@@ -19,6 +20,9 @@ public class Parallaxer : MonoBehaviour {
 	}
 
 	public GameObject Prefab;
+
+	// public GameManager.Prefabs PrefabType;
+
 	public int poolSize;
 	public float shiftSpeed;
 	public float spawnRate;
@@ -28,6 +32,7 @@ public class Parallaxer : MonoBehaviour {
 	public bool spawnImmediate;
 	public Vector3 immediateSpawnPos;
 	public Vector2 targetAspectRatio;
+
 
 	float spawnTimer;
 	PoolObject[] poolObjects;
@@ -75,6 +80,7 @@ public class Parallaxer : MonoBehaviour {
 		poolObjects = new PoolObject[poolSize];
 		for (int i = 0; i < poolObjects.Length; i++) {
 			GameObject go = Instantiate(Prefab) as GameObject;
+			// go.GetComponent<SpriteRenderer>().sprite = game.getSprite(PrefabType);
 			Transform t = go.transform;
 			t.SetParent(transform);
 			t.position = Vector3.one * 1000;

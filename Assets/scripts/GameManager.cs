@@ -12,15 +12,13 @@ public class GameManager : MonoBehaviour {
 	public GameObject startPage;
 	public GameObject gameOverPage;
 	public GameObject countdownPage;
-	public GameObject skinPage;
 	public Text scoreText;
 
 	enum PageState {
 		None,
 		Start,
 		Countdown,
-		GameOver,
-		Skin
+		GameOver
 	}
 
 	int score = 0;
@@ -77,31 +75,21 @@ public class GameManager : MonoBehaviour {
 				startPage.SetActive(false);
 				gameOverPage.SetActive(false);
 				countdownPage.SetActive(false);
-				skinPage.SetActive(false);
 				break;
 			case PageState.Start:
 				startPage.SetActive(true);
 				gameOverPage.SetActive(false);
 				countdownPage.SetActive(false);
-				skinPage.SetActive(false);
 				break;
 			case PageState.Countdown:
 				startPage.SetActive(false);
 				gameOverPage.SetActive(false);
 				countdownPage.SetActive(true);
-				skinPage.SetActive(false);
 				break;
 			case PageState.GameOver:
 				startPage.SetActive(false);
 				gameOverPage.SetActive(true);
 				countdownPage.SetActive(false);
-				skinPage.SetActive(false);
-				break;
-			case PageState.Skin:
-				startPage.SetActive(false);
-				gameOverPage.SetActive(false);
-				countdownPage.SetActive(false);
-				skinPage.SetActive(true);
 				break;
 		}
 	}
@@ -116,14 +104,4 @@ public class GameManager : MonoBehaviour {
 		SetPageState(PageState.Countdown);
 	}
 
-	public void EnterSkinInventory()
-    {
-		SetPageState(PageState.Skin);
-
-    }
-
-	public void EnterStartPage()
-    {
-		SetPageState(PageState.Start);
-    }
 }
