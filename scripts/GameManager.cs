@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject skinPage;
 	public Text scoreText;
 
+    [SerializeField] UpdateSprites[] _updaters;
+
 	enum PageState {
 		None,
 		Start,
@@ -23,7 +25,7 @@ public class GameManager : MonoBehaviour {
 		Skin
 	}
 
-	int score = 0;
+	public int score = 0;
 	bool gameOver = true;
 
 	public bool GameOver { get { return gameOver; } }
@@ -60,6 +62,14 @@ public class GameManager : MonoBehaviour {
 	void OnPlayerScored() {
 		score++;
 		scoreText.text = score.ToString();
+
+		// if (score == 5)
+        // {
+        //     for (int i = 0; i < _updaters.Length; i++)
+        //     {
+        //         _updaters[i].UpdateSprite(score);
+        //     }
+        // }
 	}
 
 	void OnPlayerDied() {
