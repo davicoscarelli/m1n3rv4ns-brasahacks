@@ -34,6 +34,7 @@ public class SwitchCharacterScript : MonoBehaviour {
 			// disable the first one and anable the second one
 			avatar1.gameObject.SetActive (false);
 			avatar2.gameObject.SetActive (true);
+			//PlayerPrefs.GetInt("whichAvatarIsOn", 2); ????
 			break;
 
 		// if the second avatar is on
@@ -45,8 +46,9 @@ public class SwitchCharacterScript : MonoBehaviour {
 			// disable the second one and anable the first one
 			avatar1.gameObject.SetActive (true);
 			avatar2.gameObject.SetActive (false);
+			//PlayerPrefs.GetInt("whichAvatarIsOn", 1);????
 			break;
 		}
-			
+		//playerAvatar = PlayerPrefs.GetInt('whichAvatarIsOn', 0);???
 	}
 }

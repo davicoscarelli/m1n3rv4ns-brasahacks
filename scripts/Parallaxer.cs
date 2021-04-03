@@ -37,6 +37,7 @@ public class Parallaxer : MonoBehaviour {
 	float spawnTimer;
 	PoolObject[] poolObjects;
 	float targetAspect;
+	float generationTax = 0.3f;
 	GameManager game;
 
 	void Awake() {
@@ -100,6 +101,7 @@ public class Parallaxer : MonoBehaviour {
 		pos.y = Random.Range(ySpawnRange.minY, ySpawnRange.maxY);
 		pos.x = (defaultSpawnPos.x * Camera.main.aspect) / targetAspect;
 		t.position = pos;
+
 	}
 
 	void SpawnImmediate() {

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
 	public delegate void GameDelegate();
 	public static event GameDelegate OnGameStarted;
 	public static event GameDelegate OnGameOverConfirmed;
+	
 
 	public static GameManager Instance;
 
@@ -13,7 +15,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject gameOverPage;
 	public GameObject countdownPage;
 	public GameObject skinPage;
+	public GameObject bird;
 	public Text scoreText;
+
+	
 
 	enum PageState {
 		None,

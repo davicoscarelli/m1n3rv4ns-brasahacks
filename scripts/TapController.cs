@@ -9,12 +9,19 @@ public class TapController : MonoBehaviour {
 	public static event PlayerDelegate OnPlayerDied;
 	public static event PlayerDelegate OnPlayerScored;
 
+	public LifeSliderControl scriptLifeSlider;
+
 	public float tapForce = 10;
 	public float tiltSmooth = 5;
+	public int life = 100;
 	public Vector3 startPos;
 	public AudioSource tapSound;
 	public AudioSource scoreSound;
 	public AudioSource dieSound;
+	public GameObject mushroom;
+
+	int damage = 25;
+	int cure = 25;
 
 	Rigidbody2D rigidBody;
 	Quaternion downRotation;
@@ -23,7 +30,7 @@ public class TapController : MonoBehaviour {
 	GameManager game;
 	TrailRenderer trail;
 
-	void Start() {
+	public void Start() {
 		rigidBody = GetComponent<Rigidbody2D>();
 		downRotation = Quaternion.Euler(0, 0 ,-100);
 		forwardRotation = Quaternion.Euler(0, 0, 40);
@@ -66,16 +73,51 @@ public class TapController : MonoBehaviour {
 		transform.rotation = Quaternion.Lerp(transform.rotation, downRotation, tiltSmooth * Time.deltaTime);
 	}
 
+	public void OnPlayerDamaged()
+	{
+		life -= damage;
+		dieSound.Play();
+		scriptLifeSlider.UpdateLifeSlider();
+	}
+
+	public void CureLife()
+	{
+		life += cure;
+		if (life > 100)
+		{
+			life = 100;
+		}
+		scriptLifeSlider.UpdateLifeSlider();
+		scoreSound.Play();
+	}
+
 	void OnTriggerEnter2D(Collider2D col) {
+		Debug.Log("OnTriggerEnter2D" + col.gameObject.tag);
 		if (col.gameObject.tag == "ScoreZone") {
 			OnPlayerScored();
 			scoreSound.Play();
 		}
 		if (col.gameObject.tag == "DeadZone") {
-			rigidBody.simulated = false;
-			OnPlayerDied();
-			dieSound.Play();
+			OnPlayerDamaged();
+
+			if (life <= 0)
+            {
+				rigidBody.simulated = false;
+				OnPlayerDied();
+				dieSound.Play();
+			}
 		}
+		if(col.gameObject.tag == "CureZone")
+        {
+			CureLife();
+			scoreSound.Play();
+			col.gameObject.transform.position = Vector3.one * 1000;
+			PlayerPrefs.SetInt("ola", 1);
+		}
+		//if(col.)
+		//fazer sknis
+		//criar uma tag dif p cada item
+		//no menu fazer o getint
 	}
 
 }
