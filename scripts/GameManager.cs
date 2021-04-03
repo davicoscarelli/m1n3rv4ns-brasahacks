@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public int score = 0;
+
+	public int level = 0;
+	public int changeLevel = 0;
+
 	bool gameOver = true;
 
 	public bool GameOver { get { return gameOver; } }
@@ -56,20 +60,26 @@ public class GameManager : MonoBehaviour {
 		SetPageState(PageState.None);
 		OnGameStarted();
 		score = 0;
+		changeLevel = 1;
+		level = 0;
 		gameOver = false;
 	}
 
 	void OnPlayerScored() {
 		score++;
 		scoreText.text = score.ToString();
-
-		// if (score == 5)
-        // {
-        //     for (int i = 0; i < _updaters.Length; i++)
-        //     {
-        //         _updaters[i].UpdateSprite(score);
-        //     }
-        // }
+		
+		if (score == 5)
+        {
+            changeLevel = 1;
+			level = 1;
+		}else if (score == 10){
+			changeLevel = 1;
+			level = 2;
+		}
+		if (score == 2 || (score > 5 && score < 10)){
+			changeLevel = 0;
+		}
 	}
 
 	void OnPlayerDied() {
