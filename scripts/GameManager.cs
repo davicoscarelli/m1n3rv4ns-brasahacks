@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
 	public delegate void GameDelegate();
 	public static event GameDelegate OnGameStarted;
 	public static event GameDelegate OnGameOverConfirmed;
-	
 
 	public static GameManager Instance;
 
@@ -15,10 +13,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject gameOverPage;
 	public GameObject countdownPage;
 	public GameObject skinPage;
-	public GameObject bird;
 	public Text scoreText;
 
-	
+    [SerializeField] UpdateSprites[] _updaters;
 
 	enum PageState {
 		None,
@@ -28,7 +25,11 @@ public class GameManager : MonoBehaviour {
 		Skin
 	}
 
-	int score = 0;
+	public int score = 0;
+
+	public int level = 0;
+	public int changeLevel = 0;
+
 	bool gameOver = true;
 
 	public bool GameOver { get { return gameOver; } }
@@ -59,12 +60,26 @@ public class GameManager : MonoBehaviour {
 		SetPageState(PageState.None);
 		OnGameStarted();
 		score = 0;
+		changeLevel = 1;
+		level = 0;
 		gameOver = false;
 	}
 
 	void OnPlayerScored() {
 		score++;
 		scoreText.text = score.ToString();
+		
+		if (score == 5)
+        {
+            changeLevel = 1;
+			level = 1;
+		}else if (score == 10){
+			changeLevel = 1;
+			level = 2;
+		}
+		if (score == 2 || (score > 5 && score < 10)){
+			changeLevel = 0;
+		}
 	}
 
 	void OnPlayerDied() {
