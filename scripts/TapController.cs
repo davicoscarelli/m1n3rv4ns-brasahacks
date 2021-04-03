@@ -43,6 +43,7 @@ public class TapController : MonoBehaviour {
 	void OnEnable() {
 		GameManager.OnGameStarted += OnGameStarted;
 		GameManager.OnGameOverConfirmed += OnGameOverConfirmed;
+		
 	}
 
 	void OnDisable() {
@@ -58,6 +59,9 @@ public class TapController : MonoBehaviour {
 	void OnGameOverConfirmed() {
 		transform.localPosition = startPos;
 		transform.rotation = Quaternion.identity;
+		life = 100;
+		scriptLifeSlider.UpdateLifeSlider();
+
 	}
 
 	void Update() {

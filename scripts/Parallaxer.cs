@@ -21,6 +21,9 @@ public class Parallaxer : MonoBehaviour {
 
 	public GameObject Prefab;
 
+	[SerializeField] Sprite[] _targetSprites;
+
+
 	// public GameManager.Prefabs PrefabType;
 
 	public int poolSize;
@@ -72,6 +75,31 @@ public class Parallaxer : MonoBehaviour {
 		if (spawnTimer > spawnRate) {
 			Spawn();
 			spawnTimer = 0;
+		}
+		if (game.changeLevel == 1){
+			for (int i = 0; i < poolObjects.Length; i++){
+
+				int children = poolObjects[i].transform.childCount;
+
+				if (children > 0){
+					for (int j = 0; j < children; ++j){
+						GameObject curr_object	= poolObjects[i].transform.GetChild(j).gameObject;
+						if (curr_object.name != "score_zone"){
+							SpriteRenderer sr = curr_object.GetComponent<SpriteRenderer>();
+							sr.sprite = _targetSprites[game.level];
+
+						}
+					}
+
+				}else{
+					GameObject curr_object = poolObjects[i].transform.gameObject;
+					SpriteRenderer sr = curr_object.GetComponent<SpriteRenderer>();
+					sr.sprite = _targetSprites[game.level];
+
+				}
+				
+			}
+			
 		}
 	}
 
