@@ -12,7 +12,11 @@ public class SwitchCharacterScript : MonoBehaviour {
 	void Start () {
 
 		int choosenSkin = PlayerPrefs.GetInt("Skin");
+<<<<<<< Updated upstream
 		if(choosenSkin == 1 || choosenSkin == 0) // original(1)
+=======
+		if(choosenSkin == 1 || choosenSkin == null) // original(1)
+>>>>>>> Stashed changes
         {
 			avatar1.gameObject.SetActive(true);
 			avatar2.gameObject.SetActive(false);
@@ -45,6 +49,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 	// public method to switch avatars by pressing UI button
 	public void SwitchAvatar()
 	{
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 1;
+>>>>>>> Stashed changes
 		PlayerPrefs.SetInt("Skins", 1);
 		avatar1.gameObject.SetActive(true);
 		avatar2.gameObject.SetActive(false);
@@ -54,6 +62,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 
 	public void SwitchAvatarTwo()
     {
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 2;
+>>>>>>> Stashed changes
 		PlayerPrefs.SetInt("Skin", 2);
 		avatar1.gameObject.SetActive(false);
 		avatar2.gameObject.SetActive(true);
@@ -63,6 +75,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 	}
 	public void SwitchAvatarThree()
 	{
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 3;
+>>>>>>> Stashed changes
 		PlayerPrefs.SetInt("Skin", 3);
 		avatar1.gameObject.SetActive(false);
 		avatar2.gameObject.SetActive(false);
@@ -71,6 +87,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 	}
 	public void SwitchAvatarFour()
 	{
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 4;
+>>>>>>> Stashed changes
 		PlayerPrefs.SetInt("Skin", 4);
 		avatar1.gameObject.SetActive(false);
 		avatar2.gameObject.SetActive(false);
