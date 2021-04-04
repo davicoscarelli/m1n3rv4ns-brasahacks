@@ -1029,7 +1029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -54, y: -30.519}
+  m_AnchoredPosition: {x: -22.099976, y: -29.419983}
   m_SizeDelta: {x: 167.74, y: 42.36}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &576503622
@@ -1264,9 +1264,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3773568a5203544e4b591d08f1cce2e0, type: 3}
   - {fileID: 21300000, guid: fb3fc05598aea424e80b2d7e0ff789dc, type: 3}
   - {fileID: 21300000, guid: 65c30c2275a3842708eb71b4342045c2, type: 3}
-  poolSize: 100
+  poolSize: 10
   shiftSpeed: -2
-  spawnRate: 8
+  spawnRate: 2
   ySpawnRange:
     minY: -0.5
     maxY: 0.5
@@ -2004,8 +2004,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc7b794de9a03467eba9ba6aa5a83f7c, type: 3}
   - {fileID: 21300000, guid: be969451adef049dda9076847dc388da, type: 3}
   - {fileID: 21300000, guid: cd10fcaede3c44117b81e384d7dafd27, type: 3}
-  poolSize: 20
-  shiftSpeed: 0
+  poolSize: 4
+  shiftSpeed: -0.1
   spawnRate: 75
   ySpawnRange:
     minY: 0
@@ -2291,9 +2291,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f5bbfbb82992f4012b8736182b8c8219, type: 3}
   - {fileID: 21300000, guid: c0462f9425d3248d08e2a8e8570180eb, type: 3}
   - {fileID: 21300000, guid: bcfc8b7377924493c9e9ae08369432f6, type: 3}
-  poolSize: 20
+  poolSize: 4
   shiftSpeed: -0.25
-  spawnRate: 80
+  spawnRate: 60
   ySpawnRange:
     minY: -0.5
     maxY: 0.5
@@ -2989,10 +2989,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c0343d0697b5a66489df538280f893e5, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3375,8 +3375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44, y: -36}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: 31, y: -38}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1152914779
 MonoBehaviour:
@@ -4162,10 +4162,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: fad86feff7f55cf4c9cef58fd550df0a, type: 3}
-    m_FontSize: 50
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 5
+    m_MinSize: 10
     m_MaxSize: 66
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4173,10 +4173,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Flappace
-
-
-    M1n3rv4ns'
+  m_Text: M1n3rv4ns
 --- !u!222 &1567703460
 CanvasRenderer:
   m_ObjectHideFlags: 0
