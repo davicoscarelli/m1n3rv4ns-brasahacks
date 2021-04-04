@@ -117,6 +117,16 @@ public class TapController : MonoBehaviour {
 			scoreSound.Play();
 			col.gameObject.transform.position = Vector3.one * 1000;
 		}
+
+		if (col.gameObject.tag == "HellZone") {
+			life = 0;
+			scriptLifeSlider.UpdateLifeSlider();
+
+			rigidBody.simulated = false;
+			OnPlayerDied();
+			dieSound.Play();
+			
+		}
 		//if(col.)
 		//fazer skins
 		//criar uma tag dif p cada item

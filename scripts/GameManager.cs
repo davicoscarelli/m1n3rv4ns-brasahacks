@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject countdownPage;
 	public GameObject skinPage;
 	public GameObject bird;
-
+	public int numLevels;
 	public Text scoreText;
 
 	enum PageState {
@@ -70,15 +70,12 @@ public class GameManager : MonoBehaviour {
 		score++;
 		scoreText.text = score.ToString();
 
-		if (score == 5)
+		if (score%5 == 0)
         {
             changeLevel = 1;
-			level = 1;
-		}else if (score == 10){
-			changeLevel = 1;
-			level = 2;
-		}
-		if (score == 2 || (score > 5 && score < 10)){
+			level = Random.Range(0, numLevels);
+			Debug.Log("LEVEELL" + level);
+		}else{
 			changeLevel = 0;
 		}
 	}
