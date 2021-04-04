@@ -40,7 +40,7 @@ public class Parallaxer : MonoBehaviour {
 	float spawnTimer;
 	PoolObject[] poolObjects;
 	float targetAspect;
-	float generationTax = 0.3f;
+	// float generationTax = 0.3f;
 	GameManager game;
 
 	void Awake() {
@@ -87,7 +87,6 @@ public class Parallaxer : MonoBehaviour {
 						if (curr_object.name != "score_zone"){
 							SpriteRenderer sr = curr_object.GetComponent<SpriteRenderer>();
 							sr.sprite = _targetSprites[game.level];
-
 						}
 					}
 

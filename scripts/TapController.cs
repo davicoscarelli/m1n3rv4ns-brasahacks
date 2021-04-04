@@ -118,6 +118,16 @@ public class TapController : MonoBehaviour {
 			col.gameObject.transform.position = Vector3.one * 1000;
 			PlayerPrefs.SetInt("ola", 1);
 		}
+
+		if (col.gameObject.tag == "HellZone") {
+			life = 0;
+			scriptLifeSlider.UpdateLifeSlider();
+
+			rigidBody.simulated = false;
+			OnPlayerDied();
+			dieSound.Play();
+			
+		}
 		//if(col.)
 		//fazer sknis
 		//criar uma tag dif p cada item
