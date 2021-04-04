@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwitchCharacterScript : MonoBehaviour {
 
 	// referenses to controlled game objects
-	public GameObject avatar1, avatar2;
+	public GameObject avatar1, avatar2, avatar3, avatar4;
 
 	// variable contains which avatar is on and active
 	int whichAvatarIsOn = 1;
@@ -14,43 +14,73 @@ public class SwitchCharacterScript : MonoBehaviour {
 	void Start () {
 
 		int choosenSkin = PlayerPrefs.GetInt("Skin");
-		if(choosenSkin == 2)
+		if(choosenSkin == 1 || choosenSkin == null) // original(1)
+        {
+			avatar1.gameObject.SetActive(true);
+			avatar2.gameObject.SetActive(false);
+			avatar3.gameObject.SetActive(false);
+			avatar4.gameObject.SetActive(false);
+		}
+		if(choosenSkin == 2) //mario
         {
 			avatar1.gameObject.SetActive(false);
 			avatar2.gameObject.SetActive(true);
+			avatar3.gameObject.SetActive(false);
+			avatar4.gameObject.SetActive(false);
+		}
+		if(choosenSkin == 3) //minecraft
+        {
+			avatar1.gameObject.SetActive(false);
+			avatar2.gameObject.SetActive(false);
+			avatar3.gameObject.SetActive(true);
+			avatar4.gameObject.SetActive(false);
+		}
+		if(choosenSkin == 4) //pokemon
+        {
+			avatar1.gameObject.SetActive(false);
+			avatar2.gameObject.SetActive(false);
+			avatar3.gameObject.SetActive(false);
+			avatar4.gameObject.SetActive(true);
 		}
 	}
 
 	// public method to switch avatars by pressing UI button
 	public void SwitchAvatar()
 	{
+		whichAvatarIsOn = 1;
+		PlayerPrefs.SetInt("Skins", 1);
+		avatar1.gameObject.SetActive(true);
+		avatar2.gameObject.SetActive(false);
+		avatar3.gameObject.SetActive(false);
+		avatar4.gameObject.SetActive(false);
+	}
 
-		// processing whichAvatarIsOn variable
-		switch (whichAvatarIsOn) {
+	public void SwitchAvatarTwo()
+    {
+		whichAvatarIsOn = 2;
+		PlayerPrefs.SetInt("Skin", 2);
+		avatar1.gameObject.SetActive(false);
+		avatar2.gameObject.SetActive(true);
+		avatar3.gameObject.SetActive(false);
+		avatar4.gameObject.SetActive(false);
 
-		// if the first avatar is on
-			case 1:
-
-			// then the second avatar is on now
-				whichAvatarIsOn = 2;
-				PlayerPrefs.SetInt("Skin", 2);
-
-				// disable the first one and anable the second one
-				avatar1.gameObject.SetActive (false);
-				avatar2.gameObject.SetActive (true);
-				break;
-
-		// if the second avatar is on
-			case 2:
-
-				// then the first avatar is on now
-				whichAvatarIsOn = 1;
-				PlayerPrefs.SetInt("Skin", 1);
-
-				// disable the second one and anable the first one
-				avatar1.gameObject.SetActive (true);
-				avatar2.gameObject.SetActive (false);
-				break;
-		}
+	}
+	public void SwitchAvatarThree()
+	{
+		whichAvatarIsOn = 3;
+		PlayerPrefs.SetInt("Skin", 3);
+		avatar1.gameObject.SetActive(false);
+		avatar2.gameObject.SetActive(false);
+		avatar3.gameObject.SetActive(true);
+		avatar4.gameObject.SetActive(false);
+	}
+	public void SwitchAvatarFour()
+	{
+		whichAvatarIsOn = 4;
+		PlayerPrefs.SetInt("Skin", 4);
+		avatar1.gameObject.SetActive(false);
+		avatar2.gameObject.SetActive(false);
+		avatar3.gameObject.SetActive(false);
+		avatar4.gameObject.SetActive(true);
 	}
 }
