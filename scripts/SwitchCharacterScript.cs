@@ -13,7 +13,11 @@ public class SwitchCharacterScript : MonoBehaviour {
 
 		int choosenSkin = PlayerPrefs.GetInt("Skin");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		if(choosenSkin == 1 || choosenSkin == 0) // original(1)
+=======
+		if(choosenSkin == 1 || choosenSkin == null) // original(1)
+>>>>>>> Stashed changes
 =======
 		if(choosenSkin == 1 || choosenSkin == null) // original(1)
 >>>>>>> Stashed changes
@@ -50,6 +54,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 	public void SwitchAvatar()
 	{
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 1;
+>>>>>>> Stashed changes
 =======
 		whichAvatarIsOn = 1;
 >>>>>>> Stashed changes
@@ -63,6 +71,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 	public void SwitchAvatarTwo()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 2;
+>>>>>>> Stashed changes
 =======
 		whichAvatarIsOn = 2;
 >>>>>>> Stashed changes
@@ -76,6 +88,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 	public void SwitchAvatarThree()
 	{
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 3;
+>>>>>>> Stashed changes
 =======
 		whichAvatarIsOn = 3;
 >>>>>>> Stashed changes
@@ -88,6 +104,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 	public void SwitchAvatarFour()
 	{
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+		whichAvatarIsOn = 4;
+>>>>>>> Stashed changes
 =======
 		whichAvatarIsOn = 4;
 >>>>>>> Stashed changes
