@@ -18,7 +18,7 @@ public class TapController : MonoBehaviour {
 	public AudioSource tapSound;
 	public AudioSource scoreSound;
 	public AudioSource dieSound;
-	public GameObject mushroom;
+	public AudioSource cureSound;
 
 	int damage = 25;
 	int cure = 25;
@@ -92,7 +92,7 @@ public class TapController : MonoBehaviour {
 			life = 100;
 		}
 		scriptLifeSlider.UpdateLifeSlider();
-		scoreSound.Play();
+		cureSound.Play();
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {

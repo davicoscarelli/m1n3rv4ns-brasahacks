@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject countdownPage;
 	public GameObject skinPage;
 	public GameObject bird;
+	public AudioSource startSound;
+	public AudioSource replaySound;
+	public AudioSource skinPageSound;
 	public int numLevels;
 	public Text scoreText;
 
@@ -128,20 +131,24 @@ public class GameManager : MonoBehaviour {
 		SetPageState(PageState.Start);
 		scoreText.text = "0";
 		OnGameOverConfirmed();
+		replaySound.Play();
 	}
 
 	public void StartGame() {
 		SetPageState(PageState.Countdown);
+		startSound.Play();
 	}
 
 	public void EnterSkinInventory()
     {
 		SetPageState(PageState.Skin);
+		skinPageSound.Play();
 
     }
 
 	public void EnterStartPage()
     {
 		SetPageState(PageState.Start);
-    }
+		skinPageSound.Play();
+	}
 }
