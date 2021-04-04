@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchCharacterScript : MonoBehaviour {
-
+public class SwitchCharacterScriptTwo : MonoBehaviour
+{
 	// referenses to controlled game objects
 	public GameObject avatar1, avatar2;
 
@@ -11,11 +11,12 @@ public class SwitchCharacterScript : MonoBehaviour {
 	int whichAvatarIsOn = 1;
 
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 
 		int choosenSkin = PlayerPrefs.GetInt("Skin");
-		if(choosenSkin == 2)
-        {
+		if (choosenSkin == 3)
+		{
 			avatar1.gameObject.SetActive(false);
 			avatar2.gameObject.SetActive(true);
 		}
@@ -26,21 +27,21 @@ public class SwitchCharacterScript : MonoBehaviour {
 	{
 
 		// processing whichAvatarIsOn variable
-		switch (whichAvatarIsOn) {
+		switch (whichAvatarIsOn)
+		{
 
-		// if the first avatar is on
+			// if the first avatar is on
 			case 1:
 
-			// then the second avatar is on now
 				whichAvatarIsOn = 2;
-				PlayerPrefs.SetInt("Skin", 2);
+				PlayerPrefs.SetInt("Skin", 3);
 
 				// disable the first one and anable the second one
-				avatar1.gameObject.SetActive (false);
-				avatar2.gameObject.SetActive (true);
+				avatar1.gameObject.SetActive(false);
+				avatar2.gameObject.SetActive(true);
 				break;
 
-		// if the second avatar is on
+			// if the second avatar is on
 			case 2:
 
 				// then the first avatar is on now
@@ -48,8 +49,8 @@ public class SwitchCharacterScript : MonoBehaviour {
 				PlayerPrefs.SetInt("Skin", 1);
 
 				// disable the second one and anable the first one
-				avatar1.gameObject.SetActive (true);
-				avatar2.gameObject.SetActive (false);
+				avatar1.gameObject.SetActive(true);
+				avatar2.gameObject.SetActive(false);
 				break;
 		}
 	}

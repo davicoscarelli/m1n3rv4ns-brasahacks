@@ -116,10 +116,9 @@ public class TapController : MonoBehaviour {
 			CureLife();
 			scoreSound.Play();
 			col.gameObject.transform.position = Vector3.one * 1000;
-			PlayerPrefs.SetInt("ola", 1);
 		}
 		//if(col.)
-		//fazer sknis
+		//fazer skins
 		//criar uma tag dif p cada item
 		//no menu fazer o getint
 	}
