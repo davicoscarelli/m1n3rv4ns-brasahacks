@@ -20,3 +20,5 @@ Para instalar o Flappace, primeiro é necessário a versão mais atualizada do U
 ## Teste Online
 
 Também é possível testar o jogo sem precisar clonar o repositório. Basta clicar no link abaixo para se direcionar ao Play Unity, onde é possível jogar o Flappace direto no seu navegador!
+
+[Clique Aqui!](https://play.unity.com/p/webgl-builds-34384)
